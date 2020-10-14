@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -50,12 +51,16 @@ export const Location = styled.div`
 
 
 export const Map = styled.div`
-
+  z-index: 5;
+  height: 100vh;
+  width: 100vw;
 `;
 
 
-export const CreateOrphanage = styled.div`
+export const CreateOrphanage = styled(Link)`
   position: absolute;
+  cursor: pointer;
+  z-index: 10;
   right: 40px;
   bottom: 40px;
 
