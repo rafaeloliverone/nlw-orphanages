@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         </Location>
 
 
-        <EnterApp>
+        <EnterApp to='/app'>
          <FiArrowRight size={26} color="rgba(0, 0, 0, 0.6)" />
         </EnterApp>
       </Content>
