@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiArrowRight } from 'react-icons/fi'
 
 import { Container, Content, Location, EnterApp, Main } from './styles'
 
@@ -22,7 +23,7 @@ const Home: React.FC = () => {
 
 
         <EnterApp>
-          >
+         <FiArrowRight size={26} color="rgba(0, 0, 0, 0.6)" />
         </EnterApp>
       </Content>
     </Container>

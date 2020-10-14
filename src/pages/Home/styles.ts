@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import imageBackground from '../../assets/landing.svg';
+
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -8,6 +10,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
 `;
 
 export const Content = styled.div`
@@ -22,6 +25,8 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+
+  background: url(${imageBackground}) no-repeat 80% center;
 `;
 
 export const Location = styled.div`

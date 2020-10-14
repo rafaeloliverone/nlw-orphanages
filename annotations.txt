@@ -1,0 +1,4 @@
+yarn add styled-components
+yarn add @types/styled-components
+
+yarn add react-icons
