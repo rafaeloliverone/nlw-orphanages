@@ -6,3 +6,6 @@ yarn add ts-node-dev -D (pacote para conseguir executar o projeto usando typescr
 
 yarn add typeorm sqlite3
 yarn add reflect-metadata
+
+yarn typeorm migration:create -n create_orphanages
+yarn typeorm migration:run
