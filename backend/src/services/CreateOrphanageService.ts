@@ -1,6 +1,7 @@
 import { getRepository } from "typeorm";
 import Orphanage from "../models/Orphanage";
 
+import AppError from '../errors/AppError';
 
 interface Request {
   name: string;
@@ -21,7 +22,7 @@ class CreateOrphanageService {
     })
 
     if (checkOrphanageExists) {
-      throw new Error('Orphanage already exists.');
+      throw new AppError('Orphanage already exists.', 400);
     }
 
     const orphanage = orphanagesRepository.create({

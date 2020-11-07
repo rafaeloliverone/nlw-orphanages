@@ -9,3 +9,5 @@ yarn add reflect-metadata
 
 yarn typeorm migration:create -n create_orphanages
 yarn typeorm migration:run
+
+ yarn add express-async-errors
