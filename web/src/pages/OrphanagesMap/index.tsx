@@ -1,15 +1,17 @@
 import React from 'react';
-import { FiPlus } from 'react-icons/fi';
-import { Map as LeafletMap, Marker, Popup, CircleMarker ,TileLayer } from 'react-leaflet'
+import { FiArrowRight, FiPlus } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { Map as LeafletMap, Marker, Popup, TileLayer } from 'react-leaflet'
 
 import 'leaflet/dist/leaflet.css'
 
 import mapMarkerImg from '../../assets/map-marker.svg';
 import { Container, Aside, Header, Location, Map, CreateOrphanage } from './styles';
+import MapIcon from '../../components/MapIcon';
+
 
 const OrphanagesMap: React.FC = () => {
 
-  const position = [51.505, -0.09]
   return (
     <Container>
       <Aside>
@@ -35,11 +37,21 @@ const OrphanagesMap: React.FC = () => {
           <TileLayer
             url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
           />
-          <CircleMarker center={[-7.225458, -35.880131]} radius={20} />
+          <Marker
+            icon={MapIcon}
+            position={[-7.225458, -35.880131]}
+          >
+            <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
+              Lar das meninas 
+              <Link to="/orphanages/1">
+                <FiArrowRight size={32} color="#FFF"/>
+              </Link>
+            </Popup>
+          </Marker>
         </LeafletMap>
       </Map>
 
-      <CreateOrphanage to="">
+      <CreateOrphanage to="/orphanages/create">
         <FiPlus size={32} color="#FFF" />
       </CreateOrphanage>
     </Container>
